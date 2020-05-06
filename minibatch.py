@@ -39,7 +39,9 @@ def miniBatch(X, y, batch_size = 20, alpha = 0.005, iter_nums = 25):
 ########run###########3
 if __name__=="__main__":
     data=pd.read_csv('data.csv')
+    #X is all row all col except last col
     X=data.iloc[:,:-1].values
+    #y is all row and last col
     y=data.iloc[:,-1].values
     reg_coeff=miniBatch(X,y)
     #plot
